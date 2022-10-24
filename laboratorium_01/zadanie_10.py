@@ -18,7 +18,7 @@ def obliczenia():
             print(round(x/y,4))
     elif sym =='#':
         if x<0 and y%2==0:
-            print('Ten kalkulator nie lubi liczb zespolonych')
+            print('Ten kalkulator nie lubi liczb zespolonych ;)')
         else:
             print(x**(1/y))
     elif sym =='^':
