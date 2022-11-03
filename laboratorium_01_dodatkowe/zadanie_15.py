@@ -28,6 +28,7 @@ def gimme():
 a0=0
 a1=1
 b0=2
+b1=2
 n=2
 bn=b0+2*a1
 an=a1-b0*a0
@@ -38,5 +39,7 @@ while True:
         break
     else:
         print(bn)
+        bn=b1+2*a1
+        a0, a1, an= a1, an, a1 - b1 * a0
+        b1=bn
     n+=1
-    a0,a1,an,b0,bn=a1,an,a1-b0*a0,bn,b0+2*a1
