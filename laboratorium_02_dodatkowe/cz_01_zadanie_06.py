@@ -16,3 +16,5 @@ ciagTrue=tab[1] #string majacy tylko nasz ciag
 tabASCII=[]
 for i in ciagTrue:
     tabASCII.append(ord(i))
+
+print(chr(sorted(tabASCII)[-5]))
