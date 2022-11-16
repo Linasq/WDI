@@ -5,18 +5,18 @@ sum_prime([7, 13, 18, 23, 24]) ➞ "(2 42)(3 42)(7 7)(13 13)(23 23)"
 sum_prime([3, 5, 7, 9, 11, 13]) ➞ "(3 12)(5 5)(7 7)(11 11)(13 13)"
 '''
 def sum_prime(tab):
-    dict={}
+    dict={}#stworzenie slownika, ktory przechowa nasze rozwiazanie
     for i in tab:
         if i>0:
             n=i
-            x = 2
+            x = 2 #czynnik pierwszy
             while n!=1:
                 if n%x==0:
-                    if x in dict.keys():
+                    if x in dict.keys(): #jesli juz jest taki czynnik pierwszy w tablicy liscie, to dodajemy do sumy kolejna liczbe
                         dict[x]+=i
-                    else:
+                    else: #a jesli nie ma takiego czynnika, to uzupełniamy slownik o nowy czynnik
                         dict.update({x:i})
-                    while n%x==0:
+                    while n%x==0:#dzielimy n przez dany czynnik, dopoki juz nie bedzie podzielny, by uniknac czynnikow typu 4, 6 etc
                         n//=x
                 x+=1
     return dict
