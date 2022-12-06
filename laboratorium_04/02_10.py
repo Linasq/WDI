@@ -9,19 +9,19 @@ def ladnyPrint(tab):
 
 #funkcja, w ktorej dzieje sie magia
 def problem(tab,i, x=0,y=0):
-    if i==65: exit(ladnyPrint(tab))
+    if i==65: exit(ladnyPrint(tab)) #8*8=64, wiec jak i bedzie mialo 65, to koniec
 
-    tabX=[x+2, x+1, x-1, x-2, x-2, x-1, x+1, x+1]
+    tabX=[x+2, x+1, x-1, x-2, x-2, x-1, x+1, x+2] #wszystie mozliwe ruchy skoczka
     tabY=[y+1, y+2, y+2, y+1, y-1, y-2, y-2, y-1]
 
     for x1,y1 in zip(tabX,tabY):
         if 0<=x1<8 and 0<=y1<8:
             if tab[x1][y1]==0:
-                tab[x1][y1] = i
+                tab[x1][y1] = i #nasz backtracking algorytm
                 problem(tab, i+1, x1, y1)
                 tab[x1][y1] = 0
 
-tab=[[0 for _ in range(8)] for _ in range(8)]
+tab=[[0 for _ in range(8)] for _ in range(8)] #lista wypelniona 0
 tab[0][0]=1
 problem(tab,2)
 
