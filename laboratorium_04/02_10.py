@@ -26,7 +26,6 @@ tab[0][0]=1
 problem(tab,2)
 
 '''
-znajduje to co ponizej, ale po 5 min
 1 34 36 62 31 18 9 64
 35 56 32 58 10 63 30 17
 33 2 54 37 61 28 19 8

@@ -40,7 +40,7 @@ def trojkatProstokatny(dane):
         x=dane[i][0]#tworzenie pierwszej wspolrzednej
         y=dane[i][1]
 
-        for ii in range(i,n):
+        for ii in range(i+1,n):
             xx=dane[ii][0] #tworzenie drugiej wsp
             yy=dane[ii][1]
             if x==xx and y!=yy:
@@ -72,11 +72,9 @@ def trojkatProstokatny(dane):
     y = [y[1] for y in dane]
     plt.scatter(x, y, color='blue')
 
-    x1,y1=[],[]
-    for i in tab: #przedstawienie tylko punktow, ktore t
-        for j in i:
-            x1.append(j[0])
-            y1.append(j[1])
+    x1=[[j[0] for j in i] for i in tab] #list comprehension punktow, ktore spelniaja warunek
+    y1=[[j[1] for j in i] for i in tab]
+
     plt.scatter(x1,y1, color='red')
     plt.title('Punkty tworzace trojkat prostokatny')
     plt.show()
