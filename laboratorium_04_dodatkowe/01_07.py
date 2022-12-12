@@ -29,14 +29,12 @@ def mordkiSieSzachuja(dane):
 
     tab=[['.' for _ in range(100)] for _ in range(100)]
     for i in dane:  tab[i[0]][i[1]]='S' #uzupelnienie tablicy skoczkami
-    for y in range(100):
-        for x in range(100):
-            if tab[x][y]=='S':
-                for i,j in zip(tabX,tabY):
-                    if 0<=x+i<100 and 0<=y+j<100:
-                        if tab[x+i][j+y]=='S':
-                            if y+j>y and [(x+i,y+j),(x,y)] not in tabSkoczkow: tabSkoczkow.append([(x+i,y+j),(x,y)])
-                            elif y+j<y and [(x,y),(x+i,y+j)] not in tabSkoczkow: tabSkoczkow.append([(x,y),(x+i,y+j)])
+    for x,y in dane:
+        for i,j in zip(tabX,tabY):
+            if 0<=x+i<100 and 0<=y+j<100:
+                if tab[x+i][j+y]=='S':
+                    if y+j>y and [(x+i,y+j),(x,y)] not in tabSkoczkow: tabSkoczkow.append([(x+i,y+j),(x,y)])
+                    elif y+j<y and [(x,y),(x+i,y+j)] not in tabSkoczkow: tabSkoczkow.append([(x,y),(x+i,y+j)])
     ladnyPrint(tab)
     print(*tabSkoczkow)
 
