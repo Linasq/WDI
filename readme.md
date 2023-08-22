@@ -1,5 +1,5 @@
 # WDI
-Tutaj beda sie pojawiac zadania z Wstepu do Informatyki
+Zadania z przedmiotu Wstep do Informatyki
 
 Przydatne komendy:
 
